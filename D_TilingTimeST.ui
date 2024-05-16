@@ -10,6 +10,12 @@
     <height>397</height>
    </rect>
   </property>
+     <property name="maximumSize">
+   <size>
+    <width>520</width>
+    <height>520</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Time Settings</string>
   </property>
