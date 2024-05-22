@@ -6,14 +6,14 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>470</width>
-    <height>397</height>
+    <width>520</width>
+    <height>350</height>
    </rect>
   </property>
-     <property name="maximumSize">
+  <property name="maximumSize">
    <size>
-    <width>520</width>
-    <height>520</height>
+    <width>1000</width>
+    <height>1000</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -27,10 +27,10 @@ font: 40pt &quot;Calibri&quot;;</string>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>31</x>
-      <y>38</y>
-      <width>411</width>
-      <height>141</height>
+      <x>10</x>
+      <y>100</y>
+      <width>501</width>
+      <height>91</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -56,9 +56,9 @@ background-color: rgba(255, 255, 255, 70);
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>31</x>
-      <y>220</y>
-      <width>411</width>
+      <x>10</x>
+      <y>200</y>
+      <width>501</width>
       <height>141</height>
      </rect>
     </property>
@@ -82,6 +82,59 @@ background-color: rgba(255, 255, 255, 70);
      <string>Sync to 
 the Internet</string>
     </property>
+   </widget>
+   <widget class="QComboBox" name="comboBox">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>501</width>
+      <height>81</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"> QComboBox {
+    border-radius: 1px;
+    background-color: rgba(255, 255, 255, 30);
+	color: white;
+ }
+QComboBox:hover {
+    border: 2px solid rgb(194, 194, 255);
+}
+QComboBox:focus {
+    border: 2px solid rgb(140, 146, 255);
+}
+
+QComboBox::drop-down 
+{
+    width: 0px;
+    height: 0px;
+    border: 0px;
+}
+
+QComboBox QAbstractItemView {
+    color: black
+    background-color: rgba(255, 255, 255, 30);
+    border-radius: 1px;
+    selection-background-color: rgb(140, 146, 255);
+}</string>
+    </property>
+    <item>
+     <property name="text">
+      <string>--Select TimeZone--</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Europe/Moscow</string>
+     </property>
+    </item>
    </widget>
   </widget>
  </widget>
