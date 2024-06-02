@@ -1,13 +1,22 @@
 import sys
 import os
 
+import requests
+
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PyQt6 import uic
 sudoPassword = '9845'
 from PyQt6.QtCore import QTimer, QTime, QDateTime
-from PyQt6.QtGui import QFont
-from PyQt6.QtWidgets import QTimeEdit, QWidget, QVBoxLayout, QLabel, QLineEdit, QFormLayout
+from bs4 import BeautifulSoup
 
+
+url = "https://www.google.com/search?q=" + "weather"
+html = requests.get(url).content
+soup = BeautifulSoup(html, 'html.parser')
+temp = soup.find('div', attrs={'class': 'BNeawe iBp4i AP7Wnd'}).text
+str = soup.find('div', attrs={'class': 'BNeawe tAd8D AP7Wnd'}).text
+data = str.split('\n')
+sky = data[1].split(',')[0]
 
 class ChangeTime(QtWidgets.QMainWindow):
     def __init__(self, parent=None):
@@ -44,7 +53,9 @@ class MainWindow(QtWidgets.QMainWindow):
         self.timeEdit.setText(label_time)
         self.pushButton.clicked.connect(self.showChangeTime)
         self.pushButton_2.clicked.connect(self.showCalendar)
-        self.pushButton_3.clicked.connect(self.showChangeTime)
+
+        self.pushButton_3.setText(temp + "\n" + sky)
+        self.pushButton_3.clicked.connect(self.showWheather)
 
     def showChangeTime(self):
         self.w = ChangeTime()
@@ -54,9 +65,8 @@ class MainWindow(QtWidgets.QMainWindow):
         self.w = Date()
         self.w.show()
 
-    def showChangeTime(self):
-        self.w = ChangeTime()
-        self.w.show()
+    def showWheather(self):
+        pass
 
 
 app = QtWidgets.QApplication(sys.argv)
