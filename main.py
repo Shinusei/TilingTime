@@ -1,12 +1,10 @@
 import sys
 import os
-
 import requests
 
-from PyQt6 import QtCore, QtGui, QtWidgets
+from PyQt6 import QtWidgets
 from PyQt6 import uic
-sudoPassword = '9845'
-from PyQt6.QtCore import QTimer, QTime, QDateTime
+from PyQt6.QtCore import QTimer, QDateTime
 from bs4 import BeautifulSoup
 
 
