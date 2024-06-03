@@ -24,13 +24,15 @@ class ChangeTime(QtWidgets.QMainWindow):
         uic.loadUi("D_TilingTimeST.ui", self)
         self.pushButton_2.clicked.connect(self.syncTime)
         self.pushButton.clicked.connect(self.changeTimeZone)
+        with open('timezones.txt') as f:
+            lines = f.read().splitlines()
+        self.comboBox.addItems(lines)
 
     def syncTime(self):
         os.system('timedatectl set-timezone "$(curl --fail https://ipapi.co/timezone)"')
-        p = os.system('echo %s|sudo -S %s' % (sudoPassword, 'systemctl start systemd-timesyncd'))
 
     def changeTimeZone(self):
-        pass
+        os.system('timedatectl set-timezone ' + self.comboBox.currentText())
 
 
 class Date(QtWidgets.QMainWindow):

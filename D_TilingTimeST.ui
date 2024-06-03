@@ -125,16 +125,8 @@ QComboBox QAbstractItemView {
     selection-background-color: rgb(140, 146, 255);
 }</string>
     </property>
-    <item>
-     <property name="text">
-      <string>--Select TimeZone--</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>Europe/Moscow</string>
-     </property>
-    </item>
+
+
    </widget>
   </widget>
  </widget>
